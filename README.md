@@ -32,7 +32,8 @@ Nesse repositório irei guardar meus estudos do curso do Otavio Miranda
      </tr>
      <tr>
        <td><h3>Tecnologias Estudadas:</h3>
-       <td align='center'>
+       <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+         <img alt="Gustavo-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-plain.svg">
      </tr>
   </tr>
   
