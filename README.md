@@ -3,7 +3,7 @@ Nesse repositório irei guardar meus estudos do curso do Otavio Miranda
 
 ## Objetivo:
 - Finalizar o curso dentro do periodo de 1 ano e 6 meses (Curso iniciado em 03/06/2023)
-- Conseguir entender desde o Basico de Javascript e seus frameworks até o mais avançado de Typescript
+- Conseguir entender desde o basico de Javascript e seus frameworks até o avançado de Typescript
 - Não desistir no processo
 - Unidades concluidas (1/37)
 
