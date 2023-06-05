@@ -11,7 +11,7 @@ Nesse repositório irei guardar meus estudos do curso do Otavio Miranda
 
 <table align='center'>
   <tr align='center'>
-    <th colspan="2"><h2>Unidade 01</h2>
+    <th colspan="2"><h2>Unidade 01 (03/06/2023)</h2>
      <tr>
        <td><h3>Resumo:</h3>
        <td> Foi explicado como funcionará o curso e toda sua estrutura, desde a primeira unidade até a ultima.
