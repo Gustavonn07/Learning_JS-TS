@@ -1,3 +1,5 @@
+// Aula 16, 17 e 18
+
 const btn = document.querySelector('#btn');
 
 btn.onclick = function coleta() {
@@ -6,12 +8,15 @@ btn.onclick = function coleta() {
     const peso = document.querySelector('#peso').value;
     const altura = document.querySelector('#altura').value;
 
-    const lista = {
+    const objeto = {
         nome: nome,
         sobrenome: sobrenome,
         peso: peso,
         altura: altura
     };
+
+    const lista = [];
+    lista.push(objeto);
     
     console.log(lista);
 };
