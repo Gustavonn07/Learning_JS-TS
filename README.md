@@ -1,17 +1,19 @@
-# Otavio Miranda curso Udemy
-Nesse repositório irei guardar meus estudos do curso do Otavio Miranda
+# Otavio Miranda curso <span style="color: cyan">Udemy</span>
+Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript (da <span style="color: cyan">udemy</span>) do professor Otavio Miranda.
+
+##### Link: <a href="https://www.udemy.com/course/curso-de-javascript-moderno-do-basico-ao-avancado/" style="text-decoration: none; color: cyan;">Ir para udemy.</a>
 
 ## Objetivo:
-- Finalizar o curso dentro do periodo de 1 ano e 6 meses (Curso iniciado em 03/06/2023)
-- Conseguir entender desde o basico de Javascript e seus frameworks até o avançado de Typescript
-- Não desistir no processo
-- Unidades concluidas (2/37)
+- Finalizar o curso dentro do periodo de 1 ano e 6 meses (Curso iniciado em 03/06/2023).
+- Conseguir entender desde o basico de <span style="font-weight: 600">Javascript</span> e seus frameworks até o avançado de <span style="font-weight: 600">Typescript</span>.
+- Completar todas as aulas e exercícios.
+- <span style="color: crimson">Não</span> desistir no processo.
+- Unidades concluidas <span style="color: green">(2/37)</span>.
 
-<img width="100%" alt="Github" src="https://camo.githubusercontent.com/bb27b9c1df90df738e91a54665d3adb08f60583fad2f266ffbde14508e6dc918/68747470733a2f2f692e70696e696d672e636f6d2f6f726967696e616c732f65342f32362f37302f65343236373032656466383734623138316163656431653266613563366364652e676966" />
-
+<hr>
 <table align='center'>
   <tr align='center'>
-    <th colspan="2"><h2>Unidade 01 (03/06/2023)</h2>
+    <th colspan="2"><h2 style="color: darkgray">Unidade 01 (03/06/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
        <td> Foi explicado como funcionará o curso e toda sua estrutura, desde a primeira unidade até a ultima.
@@ -25,7 +27,7 @@ Nesse repositório irei guardar meus estudos do curso do Otavio Miranda
   </tr>
   
   <tr align='center'>
-    <th colspan="2"><h2>Unidade 02 (06/06/2023)</h2>
+    <th colspan="2"><h2 style="color: darkgray">Unidade 02 (06/06/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
        <td> Foi introduzido o javascript, valores e constantes, tipos primitivos e o básico de tipos de referência. Foi utilizado também as funções de Alert, aprofundado os conceitos de string e numbers e o uso do Objeto Math.
@@ -38,7 +40,7 @@ Nesse repositório irei guardar meus estudos do curso do Otavio Miranda
   </tr>
   
   <tr align='center'>
-    <th colspan="2"><h2>Unidade 03</h2>
+    <th colspan="2"><h2 style="color: darkgray">Unidade 03</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
        <td>
@@ -51,7 +53,7 @@ Nesse repositório irei guardar meus estudos do curso do Otavio Miranda
   </tr>
 
   <tr align='center'>
-    <th colspan="2"><h2>Unidade 04</h2>
+    <th colspan="2"><h2 style="color: darkgray">Unidade 04</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
        <td>
@@ -63,7 +65,7 @@ Nesse repositório irei guardar meus estudos do curso do Otavio Miranda
   </tr>
 
   <tr align='center'>
-    <th colspan="2"><h2>Unidade 05</h2>
+    <th colspan="2"><h2 style="color: darkgray">Unidade 05</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
        <td>
