@@ -1,7 +1,7 @@
 # Otavio Miranda curso <span style="color: cyan">Udemy</span>
 Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript (da <span style="color: cyan">udemy</span>) do professor Otavio Miranda.
 
-##### Link: <a href="https://www.udemy.com/course/curso-de-javascript-moderno-do-basico-ao-avancado/" style="text-decoration: none; color: cyan;">Ir para udemy.</a>
+##### Link: <a href="https://www.udemy.com/course/curso-de-javascript-moderno-do-basico-ao-avancado/" target="_blank" style="text-decoration: none; color: cyan;">Ir para udemy.</a>
 
 ## Objetivo:
 - Finalizar o curso dentro do periodo de 1 ano e 6 meses (Curso iniciado em 03/06/2023).
