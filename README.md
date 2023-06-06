@@ -25,10 +25,10 @@ Nesse repositório irei guardar meus estudos do curso do Otavio Miranda
   </tr>
   
   <tr align='center'>
-    <th colspan="2"><h2>Unidade 02</h2>
+    <th colspan="2"><h2>Unidade 02 (06/06/2023)</h2>
      <tr>
        <td><h3>Resumo:</h3>
-       <td>
+       <td> Foi introduzido o javascript, valores e constantes, tipos primitivos e o básico de tipos de referência. Foi utilizado também as funções de Alert, aprofundado os conceitos de string e numbers e o uso do Objeto Math.
      </tr>
      <tr>
        <td><h3>Tecnologias Estudadas:</h3>
