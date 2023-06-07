@@ -1,4 +1,4 @@
-// If e Else (Parte 01)
+// Condicionais (Parte 01)
 
 // Usei função para facilitar, mas não precisa ta dentro.
 
