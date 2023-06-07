@@ -41,9 +41,18 @@ ul{
     justify-content: space-between;
 }
 
+input{
+    border-radius: 10px;
+}
+
 #btn{
     padding: 5px;
     border-radius: 10px;
     background-color: lightpink;
     border: 1px solid black;
+    width: 100px;
+}
+
+.btn{
+    align-self: center;
 }
