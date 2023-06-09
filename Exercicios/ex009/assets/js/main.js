@@ -28,7 +28,7 @@ function DSem(){
             break;
     };
     return diaSem;
-}
+};
 
 // Resto da data
 function Data(){
@@ -81,9 +81,8 @@ function Data(){
     let horas = data.getHours() < 10 ? `0${data.getHours()}` : data.getHours(); 
     let minutos = data.getMinutes() < length.toString(10) ? `0${data.getMinutes()}` : data.getMinutes(); 
 
-
     return `, ${data.getDate()} de ${month()} de ${data.getFullYear()}, ${horas}:${minutos}`;
-}
+};
 
 data.innerHTML = DSem() + Data();
 
