@@ -1,4 +1,4 @@
-// Atribuição via desestruturação
+// Atribuição via desestruturação (Arrays)
 
 // Podemos definir valores dessa forma:
 const [a, b, c] = [1, 3, 5];
