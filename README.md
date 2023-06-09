@@ -3,17 +3,26 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
 
 ### Link: <a href="https://www.udemy.com/course/curso-de-javascript-moderno-do-basico-ao-avancado/" target="_blank" style="text-decoration: none; color: cyan;">Ir para udemy.</a>
 
+<hr>
+
+<div width = '100%' align='center'>
+  <img alt="Gustavo-JAVASCRIPT" height="50" width="70" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img alt="Gustavo-TYPESCRIPT" height="50" width="70" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
+</div>
+
+<hr>
+
 ## Objetivo:
 - Finalizar o curso dentro do periodo de 1 ano e 6 meses (Curso iniciado em 03/06/2023).
-- Conseguir entender desde o basico de <span style="font-weight: 600">Javascript</span> e seus frameworks até o avançado de <span style="font-weight: 600">Typescript</span>.
+- Conseguir entender desde o basico de <strong>Javascript</strong> e seus frameworks até o avançado de <strong>Typescript</strong>.
 - Completar todas as aulas e exercícios.
-- <span style="color: crimson">Não</span> desistir no processo.
-- Unidades concluidas <span style="color: green">(2/37)</span>.
+- <strong>Não</strong> desistir no processo.
+- Unidades concluidas <strong>(2/37)</strong>.
 
 <hr>
 <table align='center'>
   <tr align='center'>
-    <th colspan="2"><h2 style="color: darkgray">Unidade 01 (03/06/2023)</h2>
+    <th colspan="2"><h2>Unidade 01 (03/06/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
        <td> Foi explicado como funcionará o curso e toda sua estrutura, desde a primeira unidade até a ultima.
@@ -27,7 +36,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
   </tr>
   
   <tr align='center'>
-    <th colspan="2"><h2 style="color: darkgray">Unidade 02 (06/06/2023)</h2>
+    <th colspan="2"><h2>Unidade 02 (06/06/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
        <td> Foi introduzido o javascript, valores e constantes, tipos primitivos e o básico de tipos de referência. Foi utilizado também as funções de Alert, aprofundado os conceitos de string e numbers e o uso do Objeto Math.
@@ -40,7 +49,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
   </tr>
   
   <tr align='center'>
-    <th colspan="2"><h2 style="color: darkgray">Unidade 03</h2>
+    <th colspan="2"><h2>Unidade 03</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
        <td>
@@ -53,7 +62,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
   </tr>
 
   <tr align='center'>
-    <th colspan="2"><h2 style="color: darkgray">Unidade 04</h2>
+    <th colspan="2"><h2>Unidade 04</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
        <td>
@@ -65,7 +74,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
   </tr>
 
   <tr align='center'>
-    <th colspan="2"><h2 style="color: darkgray">Unidade 05</h2>
+    <th colspan="2"><h2>Unidade 05</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
        <td>
