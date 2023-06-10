@@ -19,5 +19,5 @@ for (c = 100; c >= -100; c -= 20) {
 // Pode usar com arrays:
 const frutas = ['Tomate', 'Laranja', 'Melão'];
 for (c = 0; c < 3; c++) {
-    console.log(`A sua fruta é ${frutas[c]}.`);
+    console.log(`A sua fruta é ${frutas[c]}`);
 }
