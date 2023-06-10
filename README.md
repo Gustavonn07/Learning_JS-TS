@@ -17,7 +17,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
 - Conseguir entender desde o basico de <strong>Javascript</strong> e seus frameworks até o avançado de <strong>Typescript</strong>.
 - Completar todas as aulas e exercícios.
 - <strong>Não</strong> desistir no processo.
-- Unidades concluidas <strong>(2/37)</strong>.
+- Unidades concluidas <strong>(3/37)</strong>.
 
 <hr>
 <table align='center'>
@@ -49,10 +49,10 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
   </tr>
   
   <tr align='center'>
-    <th colspan="2"><h2>Unidade 03</h2>
+    <th colspan="2"><h2>Unidade 03 (10/06/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
-       <td>
+       <td> Foi ensinado logica de programação com Javascript e o básico da linguagem (de Operadores até Tratamento de erros). Foi feito também exercícios como Calculadora de IMC, Timer e Lista de Tarefas.
      </tr>
      <tr>
        <td><h3 align='center'>Tecnologias Estudadas:</h3>
