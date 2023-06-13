@@ -84,4 +84,26 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
        <td align='center'>
      </tr>
   </tr>
+  <tr align='center'>
+    <th colspan="2"><h2>Unidade 06</h2>
+     <tr>
+       <td><h3 align='center'>Resumo:</h3>
+       <td>
+     </tr>
+     <tr>
+       <td><h3 align='center'>Tecnologias Estudadas:</h3>
+       <td align='center'>
+     </tr>
+  </tr>
+  <tr align='center'>
+    <th colspan="2"><h2>Unidade 07</h2>
+     <tr>
+       <td><h3 align='center'>Resumo:</h3>
+       <td>
+     </tr>
+     <tr>
+       <td><h3 align='center'>Tecnologias Estudadas:</h3>
+       <td align='center'>
+     </tr>
+  </tr>
 </table>
