@@ -65,11 +65,11 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
     <th colspan="2"><h2>Unidade 04</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
-       <td>
+       <td> Foi finalizado o conteudo de funções avançadas, criando duas calculadoras utilizando funções
      </tr>
      <tr>
        <td><h3 align='center'>Tecnologias Estudadas:</h3>
-       <td align='center'>
+       <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
      </tr>
   </tr>
 
