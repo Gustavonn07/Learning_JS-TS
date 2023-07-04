@@ -17,7 +17,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
 - Conseguir entender desde o basico de <strong>Javascript</strong> e seus frameworks até o avançado de <strong>Typescript</strong>.
 - Completar todas as aulas e exercícios.
 - <strong>Não</strong> desistir no processo.
-- Unidades concluidas <strong>(3/37)</strong>.
+- Unidades concluidas <strong>(4/37)</strong>.
 
 <hr>
 <table align='center'>
@@ -65,7 +65,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
     <th colspan="2"><h2>Unidade 04</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
-       <td> Foi finalizado o conteudo de funções avançadas, criando duas calculadoras utilizando funções
+       <td> Foi finalizado o conteudo de funções avançadas em javascript, começando com uma recaptulação sobre o assunto até aprofundar sobre o mesmo.
      </tr>
      <tr>
        <td><h3 align='center'>Tecnologias Estudadas:</h3>
