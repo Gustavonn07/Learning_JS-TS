@@ -11,7 +11,7 @@ function criaCalculadora() {
         },
 
         apagaUm() {
-            this.display.value = this.display.value.slice(0, -1)
+            this.display.value = this.display.value.slice(0, -1);
         },
 
         realizaConta() {
