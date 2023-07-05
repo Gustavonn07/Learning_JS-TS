@@ -21,22 +21,26 @@ const startClock = () => {
     }, 1000);
 }
 
-iniciar.addEventListener('click', function(event){
-    relogio.classList.remove('pausado');
-    clearInterval(timer);
-    startClock();
-});
+document.addEventListener('click', function(el) {
+    let e = el.target;
 
-pausar.addEventListener('click', function(event){
-    relogio.classList.add('pausado')
-    clearInterval(timer);
-});
+    if (e.classList.contains('zerar')) {
+        relogio.classList.remove('pausado');
+        sec = 0;
+        clearInterval(timer);
+        relogio.innerHTML = '00:00:00'
+    };
 
-zerar.addEventListener('click', function(event){
-    relogio.classList.remove('pausado');
-    sec = 0;
-    clearInterval(timer);
-    relogio.innerHTML = '00:00:00'
+    if (e.classList.contains('iniciar')) {
+        relogio.classList.remove('pausado');
+        clearInterval(timer);
+        startClock();
+    };
+
+    if (e.classList.contains('pausar')) {
+        relogio.classList.add('pausado')
+        clearInterval(timer);     
+    }
 });
 
 // Não estava no formato certo, mas era funcinal!
