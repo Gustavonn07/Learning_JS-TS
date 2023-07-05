@@ -62,7 +62,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
   </tr>
 
   <tr align='center'>
-    <th colspan="2"><h2>Unidade 04</h2>
+    <th colspan="2"><h2>Unidade 04 (04/07/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
        <td> Foi finalizado o conteudo de funções avançadas em javascript, começando com uma recaptulação sobre o assunto até aprofundar sobre o mesmo.
