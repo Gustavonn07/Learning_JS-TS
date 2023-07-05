@@ -26,3 +26,21 @@ console.log(g2.next().value);
 console.log(g2.next().value);
 console.log(g2.next().value);
 console.log(g2.next().value);
+
+// Podemos usar funções dentro de uma geradora dessa forma:
+
+function* geradora3() {
+    yield function () {
+        console.log('eae1');
+    }
+
+    yield function() {
+        console.log('eae2');
+    }
+};
+
+g3 = geradora3();
+f1 = g3.next().value;
+f2 = g3.next().value;
+f1();
+f2();
