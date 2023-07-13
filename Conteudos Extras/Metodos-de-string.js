@@ -4,6 +4,7 @@
 const str1 = 'Jão é um apelido comum para o nome João.';
 const str2 = 'Essa é uma banana.';
 const str3 = '   Hello Mundo   ';
+const str4 = 'Banana com ana mora em leitoana'
 
 // Acessar um caractere da string:
 console.log(str1[4]);
@@ -61,9 +62,23 @@ console.log(str3.trim());
     // retorna Hello Mundo    /    Hello Mundo / Hello Mundo
 
 // Para adicionar espaços em branco no começo e no fim use (Pode preencher com outras str):
-
 console.log(str2.padStart(25));
 console.log(str2.padStart(25, 'eae'));
 console.log(str2.padEnd(25));
 console.log(str2.padEnd(25, 'eae'));
     // retorna       Essa é uma banana. / eaeeaeeEssa é uma banana. / Essa é uma banana.        / Essa é uma banana.eaeeaee
+
+// Para saber se uma str se encontra depois da outra use:
+console.log('a'.localeCompare('b'));
+console.log('c'.localeCompare('b'));
+console.log('a'.localeCompare('a'));
+    // retorna -1 / 1 / 0
+
+// Para achar uma palavra na string use:
+console.log(str2.search('ana'));
+    // retorna 12
+
+// Para achar uma palavra e informações a mais na string use:
+console.log(str4.match('ana'));
+console.log(...str4.matchAll('ana'));
+    // retorna [ 'ana', index: 12, input: 'Essa é uma banana.', groups: undefined ] / todas as outras 'ana'
