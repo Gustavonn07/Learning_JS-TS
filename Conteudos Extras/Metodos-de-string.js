@@ -4,7 +4,8 @@
 const str1 = 'Jão é um apelido comum para o nome João.';
 const str2 = 'Essa é uma banana.';
 const str3 = '   Hello Mundo   ';
-const str4 = 'Banana com ana mora em leitoana'
+const str4 = 'Banana com ana mora em leitoana';
+const str5 = 'Um carro azul estacionado no estacinoamento azul';
 
 // Acessar um caractere da string:
 console.log(str1[4]);
@@ -82,3 +83,23 @@ console.log(str2.search('ana'));
 console.log(str4.match('ana'));
 console.log(...str4.matchAll('ana'));
     // retorna [ 'ana', index: 12, input: 'Essa é uma banana.', groups: undefined ] / todas as outras 'ana'
+
+// Para trocar uma string / substring por outra use:
+console.log(str5.replace('azul', 'vermelho'));
+console.log(str5.replaceAll('azul', 'vermelho'));
+    // retorna Um carro vermelho estacionado na casa azul / Um carro vermelho estacionado na casa vermelho
+
+// Para retornar o código de algum caractere em UTF-16 (até o código 65535) ou em Unicode respectivamente use:
+console.log(str5.charCodeAt(1));
+console.log(str5.codePointAt(1));
+    // retorna 109 / 109
+
+// Para retornar o caractere usando o seu código em UTF-16 ou em Unicode respectivamente use:
+console.log(String.fromCharCode(109));
+console.log(String.fromCodePoint(109));
+    // retorna m / m
+
+// Para transformar a string em maiuscula ou minuscula use:
+console.log(str1.toUpperCase());
+console.log(str1.toLowerCase());
+    //retorna JÃO É UM APELIDO COMUM PARA O NOME JOÃO. / jão é um apelido comum para o nome joão.
