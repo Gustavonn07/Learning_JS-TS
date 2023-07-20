@@ -17,7 +17,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
 - Conseguir entender desde o basico de <strong>Javascript</strong> e seus frameworks até o avançado de <strong>Typescript</strong>.
 - Completar todas as aulas e exercícios.
 - <strong>Não</strong> desistir no processo.
-- Unidades concluidas <strong>(4/37)</strong>.
+- Unidades concluidas <strong>(5/37)</strong>.
 
 <hr>
 <table align='center'>
@@ -74,14 +74,14 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
   </tr>
 
   <tr align='center'>
-    <th colspan="2"><h2>Unidade 05</h2>
+    <th colspan="2"><h2>Unidade 05 (20/07/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
-       <td>
+       <td> Foi finalizado o conteudo de arrays avançadas em javascript, começando com uma recaptulação sobre o assunto até aprofundar sobre o mesmo.
      </tr>
      <tr>
        <td><h3 align='center'>Tecnologias Estudadas:</h3>
-       <td align='center'>
+       <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
      </tr>
   </tr>
   <tr align='center'>
