@@ -17,7 +17,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
 - Conseguir entender desde o basico de <strong>Javascript</strong> e seus frameworks até o avançado de <strong>Typescript</strong>.
 - Completar todas as aulas e exercícios.
 - <strong>Não</strong> desistir no processo.
-- Unidades concluidas <strong>(5/37)</strong>.
+- Unidades concluidas <strong>(6/37)</strong>.
 
 <hr>
 <table align='center'>
