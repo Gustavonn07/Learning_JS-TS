@@ -38,4 +38,4 @@ ValidaCpf.prototype.comparadorDeCpf = function (cpfOriginal, cpfVerificador) {
 }
 
 new ValidaCpf('038.119.143-59');
-new ValidaCpf('038.119.143-43');
+new ValidaCpf('064.709.943-56');
