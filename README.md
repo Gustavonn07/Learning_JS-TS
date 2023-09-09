@@ -17,7 +17,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
 - Conseguir entender desde o basico de <strong>Javascript</strong> e seus frameworks até o avançado de <strong>Typescript</strong>.
 - Completar todas as aulas e exercícios.
 - <strong>Não</strong> desistir no processo.
-- Unidades concluidas <strong>(6/37)</strong>.
+- Unidades concluidas <strong>(7/37)</strong>.
 
 <hr>
 <table align='center'>
@@ -88,7 +88,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
     <th colspan="2"><h2>Unidade 06 (06/08/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
-       <td> Foi finalizado o conteudo de objetos avançad0s em javascript, começando com uma recaptulação sobre o assunto até aprofundar sobre o mesmo. Foi feito um execício usando arrays e objetos com um intuito de validar CPFs.
+       <td> Foi finalizado o conteudo de objetos avançados em javascript, começando com uma recaptulação sobre o assunto até aprofundar sobre o mesmo. Foi feito um execício usando arrays e objetos com um intuito de validar CPFs.
      </tr>
      <tr>
        <td><h3 align='center'>Tecnologias Estudadas:</h3>
@@ -96,10 +96,21 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
      </tr>
   </tr>
   <tr align='center'>
-    <th colspan="2"><h2>Unidade 07</h2>
+    <th colspan="2"><h2>Unidade 07 (08/09/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
-       <td>
+       <td> Foi ensinado POO usando classes, getters, setters, heranças e métodos estáticos em javascript.
+     </tr>
+     <tr>
+       <td><h3 align='center'>Tecnologias Estudadas:</h3>
+       <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+     </tr>
+  </tr>
+  <tr align='center'>
+    <th colspan="2"><h2>Unidade 08</h2>
+     <tr>
+       <td><h3 align='center'>Resumo:</h3>
+       <td> 
      </tr>
      <tr>
        <td><h3 align='center'>Tecnologias Estudadas:</h3>
