@@ -17,7 +17,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
 - Conseguir entender desde o basico de <strong>Javascript</strong> e seus frameworks até o avançado de <strong>Typescript</strong>.
 - Completar todas as aulas e exercícios.
 - <strong>Não</strong> desistir no processo.
-- Unidades concluidas <strong>(8/37)</strong>.
+- Unidades concluidas <strong>(9/37)</strong>.
 
 <hr>
 <table align='center'>
@@ -118,4 +118,29 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
        <img alt="Gustavo-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-plain.svg">
      </tr>
   </tr>
+  <tr align='center'>
+    <th colspan="2"><h2>Unidade 09 (02/10/2023)</h2>
+     <tr>
+       <td><h3 align='center'>Resumo:</h3>
+       <td> Foi ensinado Webpack com Babel para compilar codigos complexos em sistemas antigos e o uso de Import e Export.
+     </tr>
+     <tr>
+       <td><h3 align='center'>Tecnologias Estudadas:</h3>
+       <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+       <img alt="Gustavo-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-plain.svg">
+       <img alt="Gustavo-BABEL" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/babel/babel-original.svg">
+       <img alt="Gustavo-WEBPACK" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/webpack/webpack-original.svg">
+     </tr>
+  </tr>
+  <!-- <tr align='center'>
+    <th colspan="2"><h2>Unidade </h2>
+     <tr>
+       <td><h3 align='center'>Resumo:</h3>
+       <td> 
+     </tr>
+     <tr>
+       <td><h3 align='center'>Tecnologias Estudadas:</h3>
+       <td align='center'> 
+     </tr>
+  </tr> -->
 </table>
