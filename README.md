@@ -13,7 +13,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
 <hr>
 
 ## Objetivo:
-- Finalizar o curso dentro do periodo de 1 ano e 6 meses (Curso iniciado em 03/06/2023).
+- Finalizar o curso dentro do periodo de 1 ano e 6 meses (Curso iniciado em 07/08/2024) (reiniciando do zero).
 - Conseguir entender desde o basico de <strong>Javascript</strong> e seus frameworks até o avançado de <strong>Typescript</strong>.
 - Completar todas as aulas e exercícios.
 - <strong>Não</strong> desistir no processo.
@@ -21,7 +21,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
 
 <hr>
 <table align='center'>
-  <tr align='center'>
+  <!-- <tr align='center'>
     <th colspan="2"><h2>Unidade 01 (03/06/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
@@ -33,9 +33,9 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
             <img alt="Gustavo-NODEJS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-plain.svg">
             <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
      </tr>
-  </tr>
+  </tr> -->
   
-  <tr align='center'>
+  <!-- <tr align='center'>
     <th colspan="2"><h2>Unidade 02 (06/06/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
@@ -46,9 +46,9 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
        <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
          <img alt="Gustavo-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-plain.svg">
      </tr>
-  </tr>
+  </tr> -->
   
-  <tr align='center'>
+  <!-- <tr align='center'>
     <th colspan="2"><h2>Unidade 03 (10/06/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
@@ -59,9 +59,9 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
        <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
        <img alt="Gustavo-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-plain.svg">
      </tr>
-  </tr>
+  </tr> -->
 
-  <tr align='center'>
+  <!-- <tr align='center'>
     <th colspan="2"><h2>Unidade 04 (04/07/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
@@ -71,9 +71,9 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
        <td><h3 align='center'>Tecnologias Estudadas:</h3>
        <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
      </tr>
-  </tr>
+  </tr> -->
 
-  <tr align='center'>
+  <!-- <tr align='center'>
     <th colspan="2"><h2>Unidade 05 (20/07/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
@@ -83,8 +83,8 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
        <td><h3 align='center'>Tecnologias Estudadas:</h3>
        <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
      </tr>
-  </tr>
-  <tr align='center'>
+  </tr> -->
+  <!-- <tr align='center'>
     <th colspan="2"><h2>Unidade 06 (06/08/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
@@ -94,8 +94,8 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
        <td><h3 align='center'>Tecnologias Estudadas:</h3>
        <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
      </tr>
-  </tr>
-  <tr align='center'>
+  </tr> -->
+  <!-- <tr align='center'>
     <th colspan="2"><h2>Unidade 07 (08/09/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
@@ -105,8 +105,8 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
        <td><h3 align='center'>Tecnologias Estudadas:</h3>
        <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
      </tr>
-  </tr>
-  <tr align='center'>
+  </tr> -->
+  <!-- <tr align='center'>
     <th colspan="2"><h2>Unidade 08 (24/09/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
@@ -117,8 +117,8 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
        <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
        <img alt="Gustavo-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-plain.svg">
      </tr>
-  </tr>
-  <tr align='center'>
+  </tr> -->
+  <!-- <tr align='center'>
     <th colspan="2"><h2>Unidade 09 (02/10/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
@@ -131,7 +131,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
        <img alt="Gustavo-BABEL" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/babel/babel-original.svg">
        <img alt="Gustavo-WEBPACK" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/webpack/webpack-original.svg">
      </tr>
-  </tr>
+  </tr> -->
   <!-- <tr align='center'>
     <th colspan="2"><h2>Unidade </h2>
      <tr>
