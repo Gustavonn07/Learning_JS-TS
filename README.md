@@ -34,7 +34,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
   </tr>
   
   <tr align='center'>
-    <th colspan="2"><h2>Unidade 02 (06/06/2023)</h2>
+    <th colspan="2"><h2>Unidade 02 (10/08/2024)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
        <td> Foi introduzido o javascript, valores e constantes, tipos primitivos e o básico de tipos de referência. Foi utilizado também as funções de Alert, aprofundado os conceitos de string e numbers e o uso do Objeto Math.
@@ -46,8 +46,8 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
      </tr>
   </tr>
   
-  <!-- <tr align='center'>
-    <th colspan="2"><h2>Unidade 03 (10/06/2023)</h2>
+  <tr align='center'>
+    <th colspan="2"><h2>Unidade 03 (11/08/2024)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
        <td> Foi ensinado logica de programação com Javascript e o básico da linguagem (de Operadores até Tratamento de erros). Foi feito também exercícios como Calculadora de IMC, Timer e Lista de Tarefas.
@@ -57,7 +57,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
        <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
        <img alt="Gustavo-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-plain.svg">
      </tr>
-  </tr> -->
+  </tr>
 
   <!-- <tr align='center'>
     <th colspan="2"><h2>Unidade 04 (04/07/2023)</h2>
