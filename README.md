@@ -60,7 +60,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
   </tr>
 
   <tr align='center'>
-    <th colspan="2"><h2>Unidade 04 (04/07/2023)</h2>
+    <th colspan="2"><h2>Unidade 04 (13/08/2024)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
        <td> Foi finalizado o conteudo de funções avançadas em javascript, começando com uma recaptulação sobre o assunto até aprofundar sobre o mesmo.
@@ -71,8 +71,8 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
      </tr>
   </tr>
 
-  <!-- <tr align='center'>
-    <th colspan="2"><h2>Unidade 05 (20/07/2023)</h2>
+  <tr align='center'>
+    <th colspan="2"><h2>Unidade 05 (16/08/2024)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
        <td> Foi finalizado o conteudo de arrays avançadas em javascript, começando com uma recaptulação sobre o assunto até aprofundar sobre o mesmo.
@@ -81,7 +81,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
        <td><h3 align='center'>Tecnologias Estudadas:</h3>
        <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
      </tr>
-  </tr> -->
+  </tr>
   <!-- <tr align='center'>
     <th colspan="2"><h2>Unidade 06 (06/08/2023)</h2>
      <tr>
