@@ -40,14 +40,14 @@ class ValidadorCPF {
     #CPF_LIMPO;
     #CPF_10;
     #CPF_11;
-    #CPF_12;
+    #CPF_11_VALIDO;
     #CPF_VALIDO;
 
     constructor(CPF) {
         this.#CPF_LIMPO = CPF.replace(/[.-]/g, '');
         this.#CPF_10 = this.#CPF_LIMPO.slice(0, -2);
         this.#CPF_11 = this.#getCPF_11();
-        this.#CPF_12 = this.#getCPF_12();
+        this.#CPF_11_VALIDO = this.#getCPF_12();
         this.#CPF_VALIDO = this.#getCPF();
     }
 
@@ -78,7 +78,7 @@ class ValidadorCPF {
     }
 
     #getCPF() {
-        return this.#CPF_12;
+        return this.#CPF_11_VALIDO;
     }
 
     isValid() {
