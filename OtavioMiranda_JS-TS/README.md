@@ -94,7 +94,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
        <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
      </tr>
   </tr>
-  <!-- <tr align='center'>
+  <tr align='center'>
     <th colspan="2"><h2>Unidade 07 (08/09/2023)</h2>
      <tr>
        <td><h3 align='center'>Resumo:</h3>
@@ -104,7 +104,7 @@ Nesse repositório irei guardar meus estudos do curso de Javascript e Typescript
        <td><h3 align='center'>Tecnologias Estudadas:</h3>
        <td align='center'> <img alt="Gustavo-JAVASCRIPT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
      </tr>
-  </tr> -->
+  </tr>
   <!-- <tr align='center'>
     <th colspan="2"><h2>Unidade 08 (24/09/2023)</h2>
      <tr>
