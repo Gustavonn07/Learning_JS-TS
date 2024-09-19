@@ -67,7 +67,7 @@ const handleDragEnd = (event: DragEndEvent) => {
 
 No seu `DndContext` adicione o atributo `onDragEnd` e passe como parametro o seu `handleDragEnd`.
 
-### Passo 6 - Keybord + Pointer Controls:
+## Passo 6 - Keybord + Pointer Controls:
 
 Para criar assessibilidade e ao pressionar ENTER em um elemento e a setinha de direção possa trocar de lugar, além de criar uma forma de usar o DnD em modelos celulares sem problemas adicione esse objeto chamado `sensors`:
 ```typescript
