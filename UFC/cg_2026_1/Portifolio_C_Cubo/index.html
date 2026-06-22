@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cubo WebGL</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="600" height="600"></canvas>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const context = canvas.getContext("webgl");
+
+    if (!context) {
+      throw new Error("WebGL não suportado");
+    }
+
+    const vertexShaderSource = `
+      attribute vec4 position;
+      attribute vec4 color;
+
+      uniform mat4 matrix;
+
+      varying vec4 fragmentColor;
+
+      void main() {
+        gl_Position = matrix * position;
+        fragmentColor = color;
+      }
+    `;
+
+    const fragmentShaderSource = `
+      precision mediump float;
+
+      varying vec4 fragmentColor;
+
+      void main() {
+        gl_FragColor = fragmentColor;
+      }
+    `;
+
+    function createShader(type, source) {
+      const shader = context.createShader(type);
+
+      context.shaderSource(shader, source);
+      context.compileShader(shader);
+
+      return shader;
+    }
+
+    const vertexShader = createShader(
+      context.VERTEX_SHADER,
+      vertexShaderSource
+    );
+
+    const fragmentShader = createShader(
+      context.FRAGMENT_SHADER,
+      fragmentShaderSource
+    );
+
+    const program = context.createProgram();
+
+    context.attachShader(program, vertexShader);
+    context.attachShader(program, fragmentShader);
+    context.linkProgram(program);
+    context.useProgram(program);
+
+    const vertices = new Float32Array([
+      -1, -1, 1,
+       1, -1, 1,
+       1,  1, 1,
+      -1,  1, 1,
+
+      -1, -1, -1,
+       1, -1, -1,
+       1,  1, -1,
+      -1,  1, -1
+    ]);
+
+    // Lembra que cada face são dois triangulos
+    const faces = [
+      [0, 1, 2, 0, 2, 3],
+      [4, 7, 6, 4, 6, 5],
+      [3, 2, 6, 3, 6, 7],
+      [0, 4, 5, 0, 5, 1],
+      [0, 3, 7, 0, 7, 4],
+      [1, 5, 6, 1, 6, 2]
+    ];
+
+    const colors = [
+      [1, 0.4, 0.4, 1],
+      [0.2, 0.8, 0.2, 1],
+      [0.2, 0.5, 1, 1],
+      [1, 0.8, 0.1, 1],
+      [0.8, 0.1, 0.9, 1],
+      [0.2, 0.8, 0.9, 1]
+    ];
+
+    const positions = [];
+    const vertexColors = [];
+
+    faces.forEach((face, index) => {
+      face.forEach(vertexIndex => {
+        const position = vertexIndex * 3;
+
+        positions.push(
+          vertices[position],
+          vertices[position + 1],
+          vertices[position + 2]
+        );
+
+        vertexColors.push(...colors[index]);
+      });
+    });
+
+    function createBuffer(data, attribute, size) {
+      const buffer = context.createBuffer();
+
+      context.bindBuffer(context.ARRAY_BUFFER, buffer);
+      context.bufferData(
+        context.ARRAY_BUFFER,
+        new Float32Array(data),
+        context.STATIC_DRAW
+      );
+
+      const location = context.getAttribLocation(program, attribute);
+
+      context.vertexAttribPointer(
+        location,
+        size,
+        context.FLOAT,
+        false,
+        0,
+        0
+      );
+
+      context.enableVertexAttribArray(location);
+    }
+
+    createBuffer(positions, "position", 3);
+    createBuffer(vertexColors, "color", 4);
+
+    const matrixLocation = context.getUniformLocation(
+      program,
+      "matrix"
+    );
+
+    function multiplyMatrix(first, second) {
+      const result = new Float32Array(16);
+
+      for (let row = 0; row < 4; row++) {
+        for (let column = 0; column < 4; column++) {
+          let value = 0;
+
+          for (let index = 0; index < 4; index++) {
+            value += first[row + index * 4] * second[index + column * 4];
+          }
+
+          result[row + column * 4] = value;
+        }
+      }
+
+      return result;
+    }
+
+    function createPerspective(fieldOfView, aspect, near, far) {
+      const scale = 1 / Math.tan(fieldOfView / 2);
+      const depth = 1 / (near - far);
+
+      return new Float32Array([
+        scale / aspect, 0, 0, 0,
+        0, scale, 0, 0,
+        0, 0, (far + near) * depth, -1,
+        0, 0, 2 * far * near * depth, 0
+      ]);
+    }
+
+    function createRotationY(angle) {
+      const cosine = Math.cos(angle);
+      const sine = Math.sin(angle);
+
+      return new Float32Array([
+         cosine, 0, sine, 0,
+         0, 1, 0, 0,
+        -sine, 0, cosine, 0,
+         0, 0, 0, 1
+      ]);
+    }
+
+    function createRotationX(angle) {
+      const cosine = Math.cos(angle);
+      const sine = Math.sin(angle);
+
+      return new Float32Array([
+        1, 0, 0, 0,
+        0, cosine, -sine, 0,
+        0, sine, cosine, 0,
+        0, 0, 0, 1
+      ]);
+    }
+
+    function createTranslation(x, y, z) {
+      return new Float32Array([
+        1, 0, 0, 0,
+        0, 1, 0, 0,
+        0, 0, 1, 0,
+        x, y, z, 1
+      ]);
+    }
+
+    context.enable(context.DEPTH_TEST);
+    context.clearColor(0.1, 0.1, 0.18, 1);
+
+    function render(time) {
+      const rotation = time * 0.001;
+
+      context.clear(
+        context.COLOR_BUFFER_BIT | context.DEPTH_BUFFER_BIT
+      );
+
+      const projection = createPerspective(
+        Math.PI / 4,
+        1,
+        0.1,
+        100
+      );
+
+      const translation = createTranslation(0, 0, -5);
+      const rotationY = createRotationY(rotation);
+      const rotationX = createRotationX(rotation * 0.4);
+
+      const matrix = multiplyMatrix(
+        projection,
+        multiplyMatrix(
+          translation,
+          multiplyMatrix(rotationY, rotationX)
+        )
+      );
+
+      context.uniformMatrix4fv(
+        matrixLocation,
+        false,
+        matrix
+      );
+
+      context.drawArrays(
+        context.TRIANGLES,
+        0,
+        36
+      );
+
+      requestAnimationFrame(render);
+    }
+
+    requestAnimationFrame(render);
+  </script>
+</body>
+</html>
