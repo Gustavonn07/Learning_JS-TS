@@ -21,6 +21,7 @@ function createPainting(x, y, z) {
   );
 
   frame.position.set(x, y, z);
+
   painting.position.set(
     x + (x < 0 ? 0.04 : -0.04),
     y,
@@ -38,10 +39,15 @@ function createPainting(x, y, z) {
 
 const paintings = [];
 
-for (let z = -20; z <= 20; z += 8) {
-  // Direito e esquerdo para cada parede
+// Estão invertidas as posições (lembrar)
+const positions = [-12, 0, 12, 24];
+
+positions.forEach((z) => {
+  // Parede esquerda
   paintings.push(...createPainting(-3.85, 2, z));
+
+  // Parede direita
   paintings.push(...createPainting(3.85, 2, z));
-}
+});
 
 export { paintings };

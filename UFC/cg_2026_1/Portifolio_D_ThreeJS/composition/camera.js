@@ -14,7 +14,7 @@ camera.lookAt(0, 1.7, -20);
 const speed = 1;
 
 const limitX = 3;
-const limitZFront = -21;
+const limitZFront = -18;
 const limitZBack = 20;
 
 window.addEventListener("keydown", (event) => {
