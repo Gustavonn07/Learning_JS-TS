@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>    
+    <title>04: Filtragem e Wrapping de Textura em WebGL</title>
+</head>
+<body>
+    <!-- cria um canvas e lhe dâ um nome "canvas" -->
+    <canvas id="canvas" width="1400" height="950">
+        Seu browser esta bem velho!
+    </canvas>
+
+    <script src="lib/gl-matrix.min.js"></script>
+
+    <!-- vertex shader como elemento da página -->
+    <script id="vertex-shader-zero" type="x-shader/x-vertex">
+        attribute vec3 a_position;
+        attribute vec2 a_texCoord; // NOVO: coordenada de textura naquele vértice
+
+        uniform mat4 u_modelMatrix;  // posiciona modelo
+        uniform mat4 u_viewMatrix;   // "enxerga" pela câmera        
+        uniform mat4 u_projectionMatrix; // projeta a geometria no NDC
+
+        varying vec2 v_texCoord;   // coordenadas de textura dos fragmentos serão interpoladas
+
+        void main()
+        {
+            // repassa as coordenadas de textura para interpolação
+            v_texCoord = a_texCoord; 
+
+            gl_Position = u_projectionMatrix*u_viewMatrix*u_modelMatrix*vec4( a_position, 1.0);            
+        }
+    </script>
+
+    <!-- fragment shader como elemento da página -->
+    <script id="fragment-shader-zero" type="x-shader/x-fragment">
+        precision mediump float;
+
+        varying vec2 v_texCoord;     // as coordenadas de textura do fragmento
+        uniform sampler2D u_sampler; // a textura
+
+        void main()
+        {
+          gl_FragColor = texture2D(u_sampler, v_texCoord);
+        }
+    </script>
+
+    <!-- código JavaScript que executa na página -->
+    <script>
+// >>>>>> novo
+        function loadTexture(gl, url) {
+            // 1. instancia uma nova textura como objeto JavaScript 
+            const texture = gl.createTexture(); 
+            // 2. ativa a textura como textura corrente do WebGL.
+            //    isso fará com que seja afetada pelas próximas chamadas.
+            gl.bindTexture(gl.TEXTURE_2D, texture);
+
+            // 3. Define texels temporários. Lembre-se: o conteúdo da web é carregado via HTTP!
+            //    A textura fica pronta para uso, evitando o "popping" caso deseje exibir conteúdo dinâmico.
+            //    Todavia, os dados são transmitidos e processados em background.
+            //    enquanto sua aplicação já pode ir trabalhando outras partes da cena que talvez já estejam carregadas.
+            //    Também seria possível criar uma tela de carregamento até que todo conteúdo esteja pronto.
+            // 
+            //    No caso, é uma textura 1x1 com cor azul, mas poderia ser qualquer outra.
+            //    Que tal configurar isso como preferência no seu render engine? =)
+            const level = 0;                // nível de detalhe
+            const internalFormat = gl.RGBA; // formato de texel da textura
+            const width  = 1;
+            const height = 1;
+            const border = 0;               // desabilita a borda
+            const srcFormat = gl.RGBA;      // formato de origem dos dados
+            const srcType = gl.UNSIGNED_BYTE;
+            //                            R  G    B    A (alpha significa opacidade)
+            const pixel = new Uint8Array([0, 0, 255, 255]);
+
+            // realiza o upload dos pixels (na realidade, 1 pixel) para a textura
+            gl.texImage2D(gl.TEXTURE_2D, level, internalFormat,
+                        width, height, border, srcFormat, srcType,
+                        pixel);
+
+            // 4. carregamento da imagem, que ocorre de forma ASSÍNCRONA.
+            const image = new Image();
+            // 4.1 callback que trata o evento de carga da textura
+            image.onload = () => {
+                // 4.2. ativa a textura como textura corrente do WebGL.
+                //      afinal, a cena poderia estar fazendo outra coisa enquanto a imagem é carregada, não é? =)
+                gl.bindTexture(gl.TEXTURE_2D, texture);
+                // NOVO: informa da inversão da imagem antes!
+                gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+
+                // 4.3 carrega os dados da imagem na textura. 
+                //     IMPORTANTE: assume-se que as imagens são RGBA codificadas com bytes sem sinal
+                gl.texImage2D( gl.TEXTURE_2D, level, internalFormat
+                             , srcFormat, srcType, image);                                
+                // 4.4 lida com mipmaps de forma adequada. no caso, mipmaps são uma pré-filtragem em pirâmide
+                //     visando reduzir o ruído em níveis de detalhe, os quais são progressivamente mais 
+                //     "grosseiros". O nível 0 é o de maior qualidade.
+                //     Mipmaps exigem texturas com dimensões de valores iguais a potências de 2.
+                //     ex: uma imagem 1024x1024 pixels, ou outra com 256x128 pixels.
+                if (isPowerOf2(image.width) && isPowerOf2(image.height)) {
+                    // se forem potências de 2, geram-se os mipmaps automaticamente!
+                    // isso melhora a qualidade em função da distância do objeto texturizado ao observador.
+                    gl.generateMipmap(gl.TEXTURE_2D);
+
+                    // =============================================================================
+                    // NOVO: wrapping de coordenadas
+                    // A) trunca as coordenadas. isso é obrigatório no caso de texturas que não são potência de 2.
+                    
+
+
+
+
+                    // gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+                    // gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+
+
+
+
+                    // B) amostra a cor da borda. NOTA: isso não funciona em WebGL 1.0 =(
+                    //    seria necessário usar uma extensão nesse caso:  OES_texture_border_clamp / GL_OES_texture_border_clamp
+                    
+                    
+
+                    
+                    // NOTA: infelizmente, isso geralmente não funciona. São lançados 1 eero e 1 warning:
+                    //       * Uncaught TypeError: gl.texParameterfv is not a function
+                    //       * WebGL warning: texParameter: pname 0x2802: Invalid param 0x0000.  
+                    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_BORDER);
+                    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_BORDER);
+
+                    // NOVO: cor RGBA da borda, coordenadas no intervalo de 0.0 a 1.0
+                    //       aqui usaremos um preto com 50% de opacidade.
+                    const borderColor = new Float32Array([0.0, 0.0, 0.0, 0.5]);
+                    gl.texParameterfv(gl.TEXTURE_2D, gl.TEXTURE_BORDER_COLOR, borderColor); // função não encontrada
+                    
+
+
+
+
+                    // C) repete o padrão
+                    //gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT);
+                    //gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT);
+
+                    // D) espelhamento enquanto repete
+                    //gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.MIRRORED_REPEAT);
+                    //gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.MIRRORED_REPEAT);
+
+                    // =============================================================================
+                    // NOVO: filtros de redução e ampliação da textura
+                    // gl.NEAREST retorna o texel mais próximo. é "pixelado"
+                    // gl.LINEAR seleciona 4 texel do melhor nível de detalhe e os interpola.
+                    // gl.NEAREST_MIPMAP_NEAREST seleciona o melhor nível de detalhe, retorna o mais próximo
+                    // gl.LINEAR_MIPMAP_NEAREST seleciona o melhor nível de detalhe, interpola 4 texels
+                    // gl.NEAREST_MIPMAP_LINEAR seleciona os dois 2 melhores níveis, escolhe 1 texel de cada e os interpola
+                    // gl.LINEAR_MIPMAP_LINEAR seleciona os dois 2 melhores níveis, escolhe 4 texels de cada e os interpola
+
+                    //gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); // filtro linear?
+
+                    // filtro linear via mipmaps, também conhecido como filtro trilinear
+                    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR);
+
+                    // NOVO: use a extensão 'anisoExtension'. o símbolo TEXTURE_MAX_ANISOTROPY_EXT não está em 'gl'!
+                    //       outra opção seria inicializar isso adequadamente.  
+                    //
+                    // Veja todas as capacidades do seu hardware em https://webglreport.com/
+                    gl.texParameteri(gl.TEXTURE_2D, anisoExtension.TEXTURE_MAX_ANISOTROPY_EXT, 16); // anisotropia máxima
+                    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+                    
+                    
+                } else
+                {
+                    // A imagem NÃO possui dimensões iguais a potências de 2: desativa mipmaps e usa filtragem linear
+                    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+                    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+                    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+                    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+                }
+
+                // NOVO: desvincular a textura.
+                //       isso evita que outros processos ocorrendo em paralelo alterem parâmetros
+                gl.bindTexture(gl.TEXTURE_2D, null);
+            };
+            image.onerror = () => {
+                console.error('Falha ao carregar a imagem:', url);
+            };
+
+            // 4.0 define a origem da imagem, causando o seu carregamento.
+            //     (na prática isso ocorre antes dos callbacks. haha!)
+            //
+            //   aqui, um sistema de carregamento poderia criar uma fila, esperando até que esteja vazia.
+            //   basta incluir a imagem na file, a qual será removida quando os callbacks image.onerror() ou image.onload()
+            //   forem invocados.
+            image.src = url;            
+
+            // a textura WebGL está disponível imediatamente
+            return texture;
+        }
+
+        function isPowerOf2(value) {
+            // código rápido para checar se um número é potência de 2.
+            return (value & (value - 1)) === 0;
+        }
+
+        // função: cria e compila um shader a partir do texto do seu código-fonte
+        function createAndCompileShader(gl, type, source)
+        {
+            var shader = gl.createShader(type);
+            gl.shaderSource(shader, source);
+            gl.compileShader(shader);
+
+            // verifica se tudo ocorreu bem
+            var success = gl.getShaderParameter(shader, gl.COMPILE_STATUS);
+            if (success) {
+                return shader;
+            }
+            
+            // imprime erros possíveis e descarta o shader nesse caso
+            console.log( gl.getShaderInfoLog(shader) );
+            gl.deleteShader(shader);
+            return null
+        }
+        // função: cria um programa a partir de dois ids de elementos da página
+        function makeProgram( gl, vert, frag )
+        {
+            // localiza o código-fonte pelo id via chamadas à API DOM
+            var vertexShaderSource = document.getElementById(vert).text;
+            var fragmentShaderSource = document.getElementById(frag).text;
+            
+            // criação dos shaders compilados
+            var vertexShader   = createAndCompileShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
+            var fragmentShader = createAndCompileShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
+
+            // cria o programa, adicionando os dois shaders recém-criados
+            var program = gl.createProgram();
+            gl.attachShader(program, vertexShader);
+            gl.attachShader(program, fragmentShader);
+            gl.linkProgram(program);
+
+            // verifica se o programa foi vinculado corretamente
+            var success = gl.getProgramParameter(program, gl.LINK_STATUS);
+            if (success) {
+
+                gl.useProgram(program);
+                program.a_position = gl.getAttribLocation(program, "a_position");
+                // NOVO: coordenada de textura e sampler
+                program.a_texCoord = gl.getAttribLocation(program, 'a_texCoord');
+                program.u_sampler = gl.getUniformLocation(program, 'u_sampler');
+                
+                // demais uniforms                
+                program.u_viewMatrix = gl.getUniformLocation(program, 'u_viewMatrix');
+                program.u_modelMatrix = gl.getUniformLocation(program, 'u_modelMatrix');
+                program.u_projectionMatrix = gl.getUniformLocation(program, 'u_projectionMatrix');
+
+                // logs para perceber possíveis erros
+                console.log(program.a_position);
+                console.log(program.u_viewMatrix);
+                console.log(program.u_modelMatrix);
+                console.log(program.u_projectionMatrix);
+
+                return program;
+            }
+            
+            // descarta o programa e loga erros 
+            console.log(gl.getProgramInfoLog(program));
+            gl.deleteProgram(program);
+            return null
+        }
+
+        // A) busca o canvas pelo identificador dele no documento, usando chamada DOM
+        var canvas = document.getElementById("canvas");
+        // B) requisita o contexto de renderização WebGL pelo nome
+        var gl = canvas.getContext("webgl2");        
+        if (gl === null ){
+            console.warn('WebGL2 não é suportado. Tentando WebGL 1.0');
+
+            gl = canvas.getContext("webgl");
+            if (gl === null ){
+                console.error('WebGL não é suportado');
+                exit();
+            }
+        }else {
+            console.log('usando contexto WebGL2');
+        }
+
+        // NOVO: antialiasing
+        //gl.enable(gl.SAMPLE_COVERAGE);          // sem transparência!
+        //gl.enable(gl.SAMPLE_ALPHA_TO_COVERAGE); // com transparência!
+		//gl.sampleCoverage(0.5, false);          // parametrização da amostragem
+
+        // NOVO: teste de profundidade
+        gl.enable( gl.DEPTH_TEST ); // padrão!
+
+        // NOVO: checagem da extensão de filtragem anisotrópica
+        const anisoExtension = gl.getExtension('EXT_texture_filter_anisotropic');
+
+        if (anisoExtension) {
+            // O valor máximo de anisotropia suportado pela sua GPU ou software renderer
+            const maxAnisotropy = gl.getParameter(anisoExtension.MAX_TEXTURE_MAX_ANISOTROPY_EXT);
+            
+            // DICA: você pode guardar atributos úteis como "apêndice" do  context WebGL
+            gl.hasAnisotropy = true;
+            gl.TEXTURE_MAX_ANISOTROPY_EXT =  anisoExtension.TEXTURE_MAX_ANISOTROPY_EXT
+            gl.maxAnisotropy = maxAnisotropy
+        } else {
+            gl.hasAnisotropy = false;
+            // A extensão não está disponível, a filtragem anisotrópica não será aplicada
+            console.warn('EXT_texture_filter_anisotropic not supported.');
+        }
+        
+        // checa se existe suporte a WebGL
+        // C) inspeciona a página em busca dos shaders para criar um programa
+        // SUGESTÃO: crie uma função semelhante que receba os códigos-fontes como parâmetros
+        //           mal dá trabalho para transformar um código "redondinho" em shader
+        shader = makeProgram( gl, "vertex-shader-zero", "fragment-shader-zero");
+        
+        
+        // D) inicialização da geometria (isso é o Rodo Retido, armazenando a malha em GPU)
+        
+        // D.1) manipulação dos dados no lado da CPU: construção de uma malha não indexada.
+        //      aqui, Float32Array adapta o tipo numérico do browser para aquele usado pelo driver gráfico
+        //    
+        //    3 ------ 2
+        //    |     /  |
+        //    |  /     |
+        //    0 ------ 1   
+        let lado = 1.7         
+        var vertexArray = new Float32Array([
+            // triângulo 1
+            -lado, -lado, 0.0, // vértice 0, coordenadas 3D
+            +lado, -lado, 0.0, // vértice 1, coordenadas 3D
+            +lado, +lado, 0.0, // vértice 2, coordenadas 3D
+                // triângulo 2
+            -lado, -lado, 0.0, // vértice 0, coordenadas 3D
+            +lado, +lado, 0.0, // vértice 2, coordenadas 3D
+            -lado, +lado, 0.0  // vértice 3, coordenadas 3D
+        ]);
+        
+        
+        // D.2) criação de um WebGLBuffer com vértices a serem renderizados.
+        //      você irá associar o buffer aos parâmetros de entrada do seu vertex shader.
+        var vbuf = gl.createBuffer();
+        
+        // D.3) etapa de binding.
+        //      vincula o buffer como o atual em uso pela API. pense nisso como um "seletor".
+        //      uma aplicação típica contém vários e vários buffers!
+        gl.bindBuffer(gl.ARRAY_BUFFER, vbuf);
+        
+        // D.3) Passa os dados no Float32Array (CPU) para o WebGLBuffer, que geralmente está na memória da GPU.
+        //      Nesse caso os dados são estáticos/constantes: STATIC_DRAW
+        gl.bufferData(gl.ARRAY_BUFFER, vertexArray, gl.STATIC_DRAW);
+
+// >>>>>>>>>>>>>>>> NOVO
+        const tbuf = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, tbuf);
+
+        let minUV = -1.0;
+        let maxUV = 2.0;
+        
+        const textureCoordinates = new Float32Array([
+            // triângulo 1
+            minUV, minUV, // canto inferior esquerdo
+            maxUV, minUV, // canto inferior direito
+            maxUV, maxUV,  // meio da imagem
+            // triângulo 2
+            minUV, minUV, // canto inferior esquerdo
+            maxUV, maxUV, // canto superior direito
+            minUV, maxUV  // canto superior esquerdo
+        ]);
+        
+        gl.bufferData(gl.ARRAY_BUFFER, textureCoordinates, gl.STATIC_DRAW);
+
+        // 
+        let myTexture = loadTexture( gl, "images/ufc.png");
+
+        let angle = -Math.PI*0.45
+// >>>>>>>>>>>>>>>> FIM             
+        function drawScene()
+        {
+            // -------------------------------------------------------------------------------
+            // configuração e reset do frame
+            // -------------------------------------------------------------------------------
+            // a) configura a região do canvas usada para o desenho (viewport)
+            gl.viewport(0, 0, canvas.width, canvas.height);
+
+            // b) limpa a imagem com um tom azul claro
+            gl.clearColor(0.8, 0.8, 1.0, 1.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            
+            // -------------------------------------------------------------------------------
+            // desenho do conteúdo do frame
+            // -------------------------------------------------------------------------------
+            // c) ativa o programa criado anteriormente
+            gl.useProgram(shader);
+
+            // d) vincula o buffer de atributos de vértices que criamos
+            gl.bindBuffer(gl.ARRAY_BUFFER, vbuf);
+            // d.1) localiza o atributo no programa que vai receber dados do buffer
+            gl.enableVertexAttribArray(shader.a_position); // já conhecido
+            gl.vertexAttribPointer(shader.a_position, 3, gl.FLOAT, false, 0, 0); 
+
+            // NOVO: coordenadas de textura       
+            gl.bindBuffer(gl.ARRAY_BUFFER, tbuf);
+            gl.enableVertexAttribArray(shader.a_texCoord);
+            gl.vertexAttribPointer(shader.a_texCoord, 2, gl.FLOAT, false, 0, 0); 
+
+            // NOVO: associa o sampler ao uniform. como é possível usar várias texturas simultaneamente,
+            //       iremos usar o primeiro canal (também chamado de "unit"), 0, para aquela textura.
+            gl.activeTexture(gl.TEXTURE0 + 0);
+            // vincula o objeto criado ao canal 0
+            gl.bindTexture(gl.TEXTURE_2D, myTexture);
+
+            // TODO: você pode mudar dinamicamente as opções de rolamento (wrapping) e filtragem
+            //      <<< insira seu código aqui >>
+
+            // associa a textura ao seu shader
+            gl.uniform1i(shader.u_sampler, 0);
+
+            // referências às classes da biblioteca glMatrix
+            const mat4 = glMatrix.mat4;
+            const vec3 = glMatrix.vec3;
+
+            let modelMatrix = mat4.create();   // Matriz do modelo (posição, rotação, escala do objeto)
+            let viewMatrix = mat4.create();    // Matriz de visão (posição da câmera)
+            let projectionMatrix = mat4.create(); // Matriz de projeção
+
+            mat4.identity(modelMatrix);
+            mat4.identity(viewMatrix);
+            mat4.identity(projectionMatrix);
+
+            // NOVO: animação da rotação
+            mat4.rotateX(modelMatrix, modelMatrix, angle);
+            mat4.rotateY(modelMatrix, modelMatrix, angle*0.2);
+            angle +=  Math.PI / 300;
+
+            // DICA: sempre combine matrizes de projeção e de câmera.
+            //                      eye        target     up
+            mat4.lookAt(viewMatrix, [0, 1, 5], [0, 0, 0], [0, 1, 0]);
+            mat4.perspective(projectionMatrix, Math.PI / 4, gl.canvas.clientWidth / gl.canvas.clientHeight, 0.1, 100);
+
+            // parametriza o shader. as matrizes são uniforms.
+            gl.uniformMatrix4fv(shader.u_modelMatrix, false, modelMatrix);
+            gl.uniformMatrix4fv(shader.u_viewMatrix, false, viewMatrix);
+            gl.uniformMatrix4fv(shader.u_projectionMatrix, false, projectionMatrix);
+
+
+            // d.4) realiza o desenho usando 3 vértices, a partir do primeiro (índice 0)
+            gl.drawArrays(gl.TRIANGLES, 0, 6);
+
+            // invoca novamente a renderização
+            scheduleNextFrame()
+        }
+
+        // E) invoca a função de pintura em loop. NOVO: reuso para manter o método
+        function scheduleNextFrame()
+        {     
+            //setTimeout( drawScene, 0);       // intensivo em CPU, maior frame rate a um custo elevado
+            requestAnimationFrame( drawScene); // menos intensivo em CPU, melhor integrado à pintura do browser
+        }
+
+        scheduleNextFrame()
+        
+    </script>
+</body>
+</html>
